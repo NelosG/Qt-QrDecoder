@@ -66,7 +66,7 @@ set(CMAKE_RUNTIME_OUTPUT_DIRECTORY ${CMAKE_SOURCE_DIR}/output-${CMAKE_BUILD_TYPE
 set(CMAKE_ARCHIVE_OUTPUT_DIRECTORY ${CMAKE_SOURCE_DIR}/output-${CMAKE_BUILD_TYPE})
 
 
-if (CMAKE_BUILD_TYPE MATCHES Release)
+if (CMAKE_BUILD_TYPE MATCHES MinSizeRel)
     if (WIN32)
         SET(GUI_TYPE WIN32)
     elseif (APPLE)
@@ -83,7 +83,7 @@ file(
 )
 
 
-set(SOURCES main.cpp ${SRC})
+set(SOURCES main.cpp ${SRC} resourses/icon.rc)
 
 
 add_executable(${PROJECT_NAME} ${GUI_TYPE} ${SOURCES})
